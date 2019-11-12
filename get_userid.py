@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 """
 This program is for testing DynamoDB easily.
 written by sudsator (Nov 2019)
@@ -25,6 +26,7 @@ import random, string
 import sys
 import timeit
 from boto3.dynamodb.conditions import Key, Attr
+import argparse
 
 TABLE_NAME = "TEST_TABLE"
 REGION_NAME ="us-east-1"
@@ -98,7 +100,7 @@ def get_userid(userids):
         table = DYNAMO.Table(table_name)
         
         for userid in userids:
-            print "key=",userid
+            print("key=",userid)
             response = table.query(
                 KeyConditionExpression = Key('user_id').eq(userid)
             )
@@ -117,4 +119,4 @@ args = sys.argv
 args.pop(0)
 
 results = timeit.timeit(lambda: get_userid(args), number=1)
-print "exec time[sec]", results
+print("exec time[sec]", results)

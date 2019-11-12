@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 """
 This program is for testing DynamoDB easily.
 written by sudsator (Nov 2019)

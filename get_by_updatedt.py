@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 """
 This program is for testing DynamoDB easily.
 written by sudsator (Nov 2019)
@@ -120,4 +121,4 @@ args = sys.argv
 #get_by_updatedt(args[1],args[2])
 
 results = timeit.timeit(lambda: get_by_updatedt(args[1],args[2]), number=1)
-print "exec time[sec]", results
+print("exec time[sec]", results)

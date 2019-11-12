@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 """
 This program is for testing DynamoDB easily.
 written by sudsator (Nov 2019)
@@ -27,8 +28,9 @@ import random, string
 import sys
 import timeit
 from boto3.dynamodb.conditions import Key, Attr
+import argparse
 
-TABLE_NAME = "TEST_TABLE"
+TABLE_NAME = "TEST_TABLE3"
 REGION_NAME ="us-east-1"
 
 LOGGER = logging.getLogger()
@@ -159,7 +161,15 @@ def make_table():
         LOGGER.error(error)
         raise error
 
-#args = sys.argv
+parser = argparse.ArgumentParser(description='make a DyanamoDB Table')
+
+parser.add_argument('tablename', metavar='tablename', type=str, nargs=1,
+                    help='the table name to create')
+
+args = parser.parse_args()
+print(args.tablename)
+
+TABLE_NAME = args.tablename[0]
 
 make_table()
 
