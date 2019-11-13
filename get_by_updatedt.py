@@ -17,6 +17,7 @@ https://note.nkmk.me/python-timeit-measure/
 https://dev.classmethod.jp/cloud/aws/lambda-python-dynamodb/
 https://qiita.com/nagataaaas/items/531b1fc5ce42a791c7df
 https://w.amazon.com/bin/view/AWS/Teams/Proserve/Japan/Initiatives/DesignCookbook/
+https://gitlab.com/yamabass80/python_packaging_note/blob/master/Readme.md
 """
 
 import logging
